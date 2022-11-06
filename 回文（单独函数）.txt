@@ -1,0 +1,29 @@
+bool isPalindrome(int x){
+    int n=0;
+    int tmp=x;
+    int sum=0;       
+    if(x<0)
+    {
+        return false;
+    }
+    while(tmp)
+    {
+       tmp/=10;
+       n++;
+    }
+    tmp=x;
+    while(tmp)
+    {
+      sum+=tmp%10*pow(10,n-1);
+      tmp/=10;
+      n--;
+    }
+    if(sum==x)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
